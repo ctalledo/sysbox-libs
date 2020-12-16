@@ -20,6 +20,34 @@ import (
 	"github.com/opencontainers/runtime-spec/specs-go"
 )
 
+// IntSliceContains returns true if x is in a
+func IntSliceContains(a []int, x int) bool {
+	for _, n := range a {
+		if x == n {
+			return true
+		}
+	}
+	return false
+}
+
+// IntSliceRemove removes from slice 's' any elements which occur on slice 'db'.
+func IntSliceRemove(s, db []int) []int {
+	var r []int
+	for i := 0; i < len(s); i++ {
+		found := false
+		for _, e := range db {
+			if s[i] == e {
+				found = true
+				break
+			}
+		}
+		if !found {
+			r = append(r, s[i])
+		}
+	}
+	return r
+}
+
 // StringSliceContains returns true if x is in a
 func StringSliceContains(a []string, x string) bool {
 	for _, n := range a {

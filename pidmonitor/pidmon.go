@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-// The pidmon package allows a process to get notificaitons on events associated with
+// The pidmon package allows a process to get notifications on events associated with
 // other processes.
 
 package pidmonitor
